@@ -1,0 +1,22 @@
+<mat-drawer-container>
+    <mat-drawer #drawer>
+        <app-sidenav-list (sidenavClose)="drawer.close()"></app-sidenav-list>
+    </mat-drawer>
+    <mat-drawer #drawer2 position="end" class="mini-drawer">
+        <mat-toolbar  class="cart-toolbar">
+            <button mat-icon-button (click)="drawer2.close()">
+              <mat-icon>close</mat-icon>
+            </button>
+            <span class="example-spacer"></span>
+            <span>Mini Cart</span>
+          </mat-toolbar>
+        <app-mini-cart></app-mini-cart>
+        <!-- <app-sidenav-list (sidenavClose)="drawer2.close()"></app-sidenav-list> -->
+    </mat-drawer>
+    <mat-drawer-content>
+        <app-header (sidenavToggle)="drawer.toggle()" (cartToggle)="drawer2.toggle()"></app-header>
+        <main>
+            <router-outlet></router-outlet>
+        </main>
+    </mat-drawer-content>
+</mat-drawer-container>

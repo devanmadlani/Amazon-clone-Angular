@@ -1,0 +1,23 @@
+.product-filter {
+    margin: 24px 0 24px;
+    background-color: var(--dark-grey);
+    min-height: 65px;
+    &__block {
+        padding: 24px 2% 24px 2%;
+        &-button {
+            border-bottom: 1px solid #bfbcbc;
+            border-top: 1px solid #bfbcbc;
+        }
+    }
+    .mat-checkbox {  
+        margin: 24px !important;
+        background-color: white !important;
+    }
+
+}
+.mat-menu-panel {
+    padding: 24px;
+    background-color: var(--dark-grey);
+    max-width: 350px !important;
+    width: 350px !important;
+}

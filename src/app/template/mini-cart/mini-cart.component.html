@@ -1,0 +1,35 @@
+<div class="mini-cart">
+    <mat-card *ngIf="products && products.length > 0">
+        <mat-card class="mini-product-card" fxLayout="row" fxLayoutGap="16px" *ngFor="let product of products">
+            <div fxFlex="40">
+                <img class="image-mage" alt="" [src]="product.image.srcOut">
+            </div>
+            <div fxFlex="60" fxLayout="column">
+                <div class="card-desc">
+                    <div>{{product.title}}</div>
+                    <div class="sub-title">{{product.subTitle}}</div>
+                    <!-- <button mat-button (click)="removeFromCart(product)" color="warn">Delete</button> -->
+                    <button mat-icon-button (click)="removeFromCart(product)"  color="warn" class="search-amazon-btn" class="drawer-button">
+                        <mat-icon>delete</mat-icon>
+                    </button>
+
+                    <select id="cars">
+                        <option *ngFor="let opt of cartQtyNumber" [value]="opt">{{opt}}</option>
+                    </select>
+                </div>
+                <div class="mini-cart-amount">{{product.amount}}</div>
+            </div>
+        </mat-card>
+        <div class="total-block" fxLayout="row">
+            <h3 fxFlex="70" class="mini-cart-amount-title">Sub Total: </h3>
+            <h3 class="mini-cart-amount">{{totalAmount}}</h3>
+        </div>
+        <div fxLayout="column" class="cart-button" fxLayoutGap="6px">
+            <button mat-stroked-button class="view-cart-btn" color="primary" fxFlex>View Cart</button>
+            <button mat-flat-button color="primary" fxFlex>Checkout</button>
+        </div>
+    </mat-card>
+    <div *ngIf="products.length == 0" class="empty-cart-title">
+        You have no items in your cart.
+    </div>
+</div>

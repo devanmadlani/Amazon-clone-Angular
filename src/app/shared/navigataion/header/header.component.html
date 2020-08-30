@@ -1,0 +1,44 @@
+<!-- <div class="notification-header">
+    Shopping Made Easy Doenload App!
+</div> -->
+<mat-toolbar class="basic-drawer-container">
+    <mat-toolbar-row class="main-menu">
+        <div>
+            <button mat-icon-button (click)="onToggleSidenav()" class="drawer-button">
+                <mat-icon>menu</mat-icon>
+            </button>
+        </div>
+        <div class="header-buttons" fxLayout="row">
+            <div  fxFlex>
+                <img src="./assets/amazon/logo.png" class="header-logo">
+            </div>
+            <div fxFlex="70" fxHide.lt-md>
+                <input type="text" class="header-input">  
+                <button mat-icon-button color="primary" class="search-amazon-btn" class="drawer-button">
+                    <mat-icon>search</mat-icon>
+                </button>
+            </div>
+            <div fxFlex="20" fxLayout fxLayoutAlign="flex-end center" class="basic-drawer-container__nav-links">
+                <ul fxLayout>
+                    <li *ngIf="isAuth"><a routerLink="/orders">Orders</a></li>
+                    <li *ngIf="!isAuth">
+                        <button mat-icon-button color="accent">
+                            <mat-icon color="primary">person</mat-icon>
+                        </button>
+                    </li>
+                    <li>
+                        <button mat-icon-button color="accent" (click)="onToggleCart()">
+                            <mat-icon [matBadge]="cartCount" color="primary" matBadgeColor="primary">shopping_cart
+                            </mat-icon>
+                        </button>
+                    </li>
+                    <li *ngIf="isAuth" (click)="onLogout()"><a>Logout</a></li>
+                </ul>
+            </div>
+        </div>
+    </mat-toolbar-row>
+    <mat-toolbar-row class="sub-menu">
+        <app-mini-menu class="desktop-content"></app-mini-menu>
+        <!-- <app-submenu class="desktop-content"></app-submenu> -->
+    </mat-toolbar-row>
+</mat-toolbar>

@@ -1,0 +1,8 @@
+<div class="product-carousel">
+  <ngx-slick-carousel class="carousel" #slickModal="slick-carousel" [config]="slideConfig" (init)="slickInit($event)"
+    (breakpoint)="breakpoint($event)" (afterChange)="afterChange($event)" (beforeChange)="beforeChange($event)">
+    <div ngxSlickItem *ngFor="let product of products" class="slide">
+      <app-product-card [product]="product" [imageClass]="slideConfig.type" [showProductDescripton]="slideConfig.showProductDescripton"></app-product-card>
+    </div>
+  </ngx-slick-carousel>
+</div>

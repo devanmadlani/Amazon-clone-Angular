@@ -1,0 +1,32 @@
+.home-content {
+  .home-banner {
+    max-width: 1500px;
+    margin-right: auto;
+    margin-left: auto;
+    .home-img {
+      width: 100%;
+      mask-image: linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 1),
+        rgba(0, 0, 0, 0)
+      );
+      max-width: 1500px;
+      margin-right: auto;
+      margin-left: auto;
+    }
+  }
+
+  .product-list {
+    z-index: 9999;
+    margin-top: -100px;
+    max-width: 1500px;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  @media (min-width:959px) {
+    .product-list {
+        margin-top: -300px;  
+    }
+  }
+}

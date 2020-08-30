@@ -1,0 +1,22 @@
+<div>
+    <ul class="menu">
+        <li class="dropdown" *ngFor="let item of megaMenu">
+            <div class="back-drop"></div>
+            <a href="#">{{item.title}}</a>
+            <div class="megadrop" fxLayout="row">
+                <div class="LinksBlock" *ngFor="let linkBlock of item.linkBlock" fxFlex="25">
+                    <div class="cat-title">{{linkBlock.title}}</div>
+                    <ul class="catagories-links">
+                        <li *ngFor="let links of linkBlock.links">
+                            <a mat-flat-button href="https://www.google.com/" target="_blank">{{links.title}}</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="productBlock" *ngFor="let product of products">
+                    <app-product-card [product]="product"></app-product-card>
+                </div>
+            </div>
+        </li>
+    </ul>
+</div>

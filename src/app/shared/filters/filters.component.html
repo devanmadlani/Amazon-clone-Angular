@@ -1,0 +1,25 @@
+<div fxLayout="row" class="product-filter">
+    <div fxFlex class="product-filter__block">
+        <button fxFlex class="product-filter__block-button" mat-button [matMenuTriggerFor]="menu">Color</button>
+        <mat-menu #menu="matMenu">
+            <section class="example-section" fxLayout="column" fxLayoutGap="16px">
+                <mat-checkbox color="primary" class="filter-checkbox" (click)="$event.stopPropagation()" fxFlex class="example-margin">Red</mat-checkbox>
+                <mat-checkbox color="primary" class="filter-checkbox" (click)="$event.stopPropagation()" fxFlex class="example-margin">Blue</mat-checkbox>
+                <mat-checkbox color="primary" class="filter-checkbox" (click)="$event.stopPropagation()" fxFlex class="example-margin">Green</mat-checkbox>
+            </section>
+        </mat-menu>
+    </div>
+    <div fxFlex class="product-filter__block">
+        <button fxFlex class="product-filter__block-button" mat-button [matMenuTriggerFor]="menu1">Size</button>
+        <mat-menu #menu1="matMenu">
+            <div>Size</div>
+        </mat-menu>
+    </div>
+    <div fxFlex class="product-filter__block">
+        <button fxFlex class="product-filter__block-button" mat-button [matMenuTriggerFor]="beforeMenu">Price</button>
+        <mat-menu #beforeMenu="matMenu" xPosition="before">
+            <button mat-menu-item>Item 1</button>
+            <button mat-menu-item>Item 2</button>
+        </mat-menu>
+    </div>
+</div>

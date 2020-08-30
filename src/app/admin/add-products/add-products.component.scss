@@ -1,0 +1,17 @@
+.basic-login-container {
+    height: 100%;
+    
+    mat-form-field, button {
+      width: 80%;
+    }
+
+  &__image {
+      background-color: #eeeeee;
+      width: 100%;
+      height: 400px;
+  }
+
+  button {
+    margin-top: 16px;
+  }
+}

@@ -1,0 +1,28 @@
+
+<div class="product-card" *ngIf="type !== 'brand'">
+  <div (click)="showProduct(product)">
+    <img [class]="imageClass" alt="" [src]="product.image"  [src]="product.image.srcOut">
+    <div *ngIf="showProductDescripton">
+      <div class="product-det product-title">{{product.title}}</div>
+      <div class="product-det subtitle-title">{{product.subTitle}}</div>
+      <div class="product-det amount-title">{{product.amount}}</div>
+    </div>
+    <div class="spinner-sucess-block">
+      <span [class.sucess-add-cart]="isSucessButton" [class.sucess-add-cart-hide]="!isSucessButton">sucess</span>
+    </div>
+  </div>
+
+  <button *ngIf="showProductDescripton" mat-flat-button color="primary" (click)="addToCart(product)" [class.spinner]="loading" [disabled]="loading" (click)="save()">Add
+    to cart</button>
+</div>
+
+<div class="product-card" *ngIf="type === 'brand'">
+  <div (click)="showProduct(product)">
+    <img class="brand-image" alt="" [src]="product.image"  [src]="ProductImage || product.image.srcOut"  
+    (mouseover)="ProductImage = product.image.srcOn"
+    (mouseout)="ProductImage = product.image.srcOut">
+  </div>
+
+  <button *ngIf="showProductDescripton" mat-flat-button color="primary" (click)="addToCart(product)" [class.spinner]="loading" [disabled]="loading" (click)="save()">Add
+    to cart</button>
+</div>

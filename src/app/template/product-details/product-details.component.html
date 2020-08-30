@@ -1,0 +1,44 @@
+<div class="desktop-content">
+<div class="product-details" fxLayout.gt-md="row" fxLayout="column" fxLayoutGap="24px">
+    <div class="product-details__image" fxFlex="50" fxLayout="row">
+        <div class="product-details__image__list" fxFlex="30" fxLayout="column">
+            <app-product-carousel [products]='products' [slideConfig]="slideConfig"></app-product-carousel>
+            <!-- <div class="mini-image-card">
+                <img alt="" class="mini-image" [src]="product.image">
+            </div>
+            <div class="mini-image-card">
+                <img alt="" class="mini-image" [src]="product.image">
+            </div>
+            <div class="mini-image-card">
+                <img alt="" class="mini-image" [src]="product.image">
+            </div>
+            <div class="mini-image-card">
+                <img alt="" class="mini-image" [src]="product.image">
+            </div>
+            <div class="mini-image-card">
+                <img alt="" class="mini-image" [src]="product.image">
+            </div> -->
+        </div>
+        <div *ngIf="product && product.image && product.image.srcOn">
+            <img alt="" class="main-image" [src]="product.image.srcOn">
+        </div>
+    </div>
+    <div class="product-details__description" fxFlex fxFlex="40">
+        
+        <h4 class="product-det product-title">{{product.title}}</h4>
+        <h2 class="product-det product-subtitle-title">{{product.subTitle}}</h2>
+        <h2 class="product-det amount-title">{{product.amount}}</h2>
+        <p class="subtitle-title">Sale item - not eligible for refund or exchange</p>
+        <p class="subtitle-title">Hurry, only 2 left!</p>
+        <!-- <button mat-raised-button color="primary" class="cart-btn">Add To Cart</button> -->
+    </div>
+</div>
+<!-- <app-product-carousel [products]='products'></app-product-carousel> -->
+<div class="desktop-content product-detailed-desc">
+    <h4>Description</h4>
+    <p>It's shades season with Mel & Molly's all new debut sunglasses line. </p>
+    <p>Get your aesthetic game on with the Quinn Sunglasses. People are sure to look at you with heart shaped eyes with
+        this beauty.</p>
+</div>
+<!-- <app-product-carousel [products]='products'></app-product-carousel> -->
+</div>

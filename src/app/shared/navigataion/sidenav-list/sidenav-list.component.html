@@ -1,0 +1,49 @@
+<mat-nav-list class="side-nav">
+  <!-- <a mat-list-item routerLink="/signup" *ngIf="!isAuth" (click)="onSidenavClose()"> 
+        <mat-icon>face</mat-icon>
+        <span class="nav-caption">Signup</span>
+    </a>
+    <a mat-list-item routerLink="/login" *ngIf="!isAuth" (click)="onSidenavClose()"> 
+        <mat-icon>face</mat-icon>
+        <span class="nav-caption">Login</span>
+    </a>
+    <a mat-list-item routerLink="/" *ngIf="isAuth" (click)="onSidenavClose()"> 
+        <mat-icon>dynamic_feed</mat-icon>
+        <span class="nav-caption">Orders</span>
+    </a>
+    <a mat-list-item routerLink="/" *ngIf="isAuth" (click)="onSidenavClose()"> 
+        <mat-icon>assignment_ind</mat-icon>
+        <span class="nav-caption">Customers</span>
+    </a>
+    <a mat-list-item routerLink="/view-requests" *ngIf="isAuth" (click)="onSidenavClose()"> 
+        <mat-icon>assignment</mat-icon>
+        <span class="nav-caption">Requests</span>
+    </a>
+    <a mat-list-item routerLink="/view-products" *ngIf="isAuth" (click)="onSidenavClose()"> 
+        <mat-icon>store</mat-icon>
+        <span class="nav-caption">Products</span>
+    </a>
+    <a mat-list-item (click)="onLogout()"f="isAuth" (click)="onSidenavClose()"> 
+        <mat-icon>power_settings_new</mat-icon>
+        <span class="nav-caption">Logout</span>
+    </a> -->
+
+  <mat-accordion>
+    <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false" *ngFor="let item of megaMenu">
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          {{item.title}}
+        </mat-panel-title>
+        <mat-panel-description>
+          <!-- Currently I am {{panelOpenState ? 'open' : 'closed'}} -->
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+      <mat-selection-list #shoes [multiple]="false">
+        <mat-list-option *ngFor="let links of item.linkBlock[0].links" [value]="shoe">
+          {{links.title}}
+          <mat-divider></mat-divider>
+        </mat-list-option>
+      </mat-selection-list>
+    </mat-expansion-panel>
+  </mat-accordion>
+</mat-nav-list>
